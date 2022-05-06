@@ -1,4 +1,5 @@
-
+% https://codetobuy.com/downloads/matlab-code-for-face-recognition-based-on-histogram-of-oriented-gradients-hog/
+% https://cmp.felk.cvut.cz/~spacelib/faces/faces96.html
 %%
 clc;
 clear;
@@ -81,9 +82,9 @@ for i=1:size(test, 2)
     for j = 1:test(i).Count
         total_test_samples = total_test_samples + 1;
         test_image = read(test(i), j);
-        queryFeatures = extractHOGFeatures(test_image);
-        personLabel = predict(classifier, queryFeatures);
-        if test(i).Description == string(personLabel)
+        extracted_features = extractHOGFeatures(test_image);
+        predicted_label = predict(classifier, extracted_features);
+        if test(i).Description == string(predicted_label)
             total_matched_samples = total_matched_samples + 1;
         end
     end
