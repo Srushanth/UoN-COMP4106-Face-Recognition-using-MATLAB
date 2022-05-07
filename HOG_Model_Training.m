@@ -78,11 +78,19 @@ msgbox("Saved the classifier model.");
 %% Testing the model
 total_test_samples = 0;
 total_matched_samples = 0;
+
+% Iterating through all the images
 for i=1:size(test, 2)
     for j = 1:test(i).Count
         total_test_samples = total_test_samples + 1;
+
+        % Reading the image
         test_image = read(test(i), j);
+
+        % Extracting HoG Features
         extracted_features = extractHOGFeatures(test_image);
+
+        % Predicting the image label
         predicted_label = predict(classifier, extracted_features);
         if test(i).Description == string(predicted_label)
             total_matched_samples = total_matched_samples + 1;
