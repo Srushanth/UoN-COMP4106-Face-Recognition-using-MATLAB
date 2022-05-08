@@ -60,13 +60,13 @@ for j = 1 : length(subFolderNames)
             files(i).name);
 
         % Reading the image
-        im = imread(string(old_file_name));
+        loaded_image = imread(string(old_file_name));
 
         % Re-shaping the image read
-        k = imresize(im, IMAGE_SHAPE);
+        resized_image = imresize(loaded_image, IMAGE_SHAPE);
 
         % Saving the image to the new destination
-        imwrite(k, string(new_file_name));
+        imwrite(resized_image, string(new_file_name));
     end
 end
 
