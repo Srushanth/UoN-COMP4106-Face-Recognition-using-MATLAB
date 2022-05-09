@@ -5,7 +5,7 @@ close all;
 allImages=imageDatastore('newDS', 'IncludeSubfolders', true, 'LabelSource', 'foldernames');
 
 [Train ,Test] = splitEachLabel(allImages,0.8,'randomized');
-fc = fullyConnectedLayer(n);
+fc = fullyConnectedLayer(4);
 net = alexnet;
 ly = net.Layers;
 ly(23) = fc;
