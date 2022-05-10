@@ -1,4 +1,3 @@
-% https://codetobuy.com/downloads/matlab-code-for-face-recognition-based-on-histogram-of-oriented-gradients-hog/
 % https://cmp.felk.cvut.cz/~spacelib/faces/faces96.html
 %%
 clc;
